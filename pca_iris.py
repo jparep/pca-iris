@@ -29,4 +29,14 @@ n_components = 2
 selected_eVectors = sorted_eVectors[:, :n_components]
 
 # Transform the data into new space
-feature_trans = X_scaled.dot(selected_eVectors)
+X_pca = X_scaled.dot(selected_eVectors)
+
+# Visualize the result
+plt.figure(figsize=(8,6))
+for i, target_names in enumerate(df.target_names):
+    plt.scatter(X_pca[y==i, 0], X_pca[y==i, 1], label=target_names)
+plt.title("PCA of Iris dataset")
+plt.xlabel("Principal Component 1")
+plt.ylabel("Principal Component 2")
+plt.legend()
+plt.show()
