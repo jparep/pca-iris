@@ -43,3 +43,10 @@ To perform PCA on the Iris dataset and visualize the results, run the pca_iris.p
 ```sh
 python pca_iris.py
 ```
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+- UCI Machine Learning Repository for providing the Vehicle dataset.
+- [scikit-learn](https://scikit-learn.org/stable/) for the PCA implementation.
+- [matplotlib](https://matplotlib.org/) for the visualization tools.
