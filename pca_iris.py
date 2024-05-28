@@ -6,15 +6,15 @@ import matplotlib.pyplot as plt
 
 # Load the Iris dataset
 df = load_iris()
-features = df.data
-target = df.target
+X = df.data
+y = df.target
 
 # Standardize the data
 scaler = StandardScaler()
-features_scaled = scaler.fit_transform(features)
+X_scaled = scaler.fit_transform(X)
 
 # Compute Covariance Matric
-cov_mx = np.cov(features_scaled, rowvar=False)
+cov_mx = np.cov(X_scaled, rowvar=False)
 
 # Computer Eiggen values and Eigen vectors
 eValues, eVectors = np.linalg.eigh(cov_mx)
@@ -29,3 +29,4 @@ n_components = 2
 selected_eVectors = sorted_eVectors[:, :n_components]
 
 # Transform the data into new space
+feature_trans = X_scaled.dot(selected_eVectors)
